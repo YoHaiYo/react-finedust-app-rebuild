@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import { DataUrlManger } from '../Data/DataUrlManger';
+import { getCardColor, getDustState, getEmojiState } from '../Data/DustStatus';
 
 /// GetApiData로 접근한 URL을 비동기 통신으로 객체 데이터로 가공 후 html 태그로 화면출력
 
@@ -39,17 +40,29 @@ export function DataSort({ sortNum, sortDirection }) {
   }, [sortNum]);
 
   return (
-    <>
-      {dustData.map((el, idx) => (
-        <div key={idx}>
-          <div>{idx}</div>
-          <div>sidoName: {el.sidoName}</div>
-          <div>stationName: {el.stationName}</div>
-          <div>dataTime: {el.dataTime}</div>
-          <div>pm10Value: {el.pm10Value}</div>
-          <div>pm10Grade: {el.pm10Grade}</div>
+    <div className='cardOuter'>
+    {dustData.map((el, idx) => (
+      <div key={idx} className='cardContainer'
+      style={{
+        backgroundColor: getCardColor(el.pm10Value),
+      }}>
+        <div>{idx + 1}위</div>
+        <div className='card-wrap-top'>
+          <div className='sidoName'>{el.sidoName}</div>
+          <div className='stationName'>{el.stationName}</div>
         </div>
-      ))}
-    </>
+        <div className='card-wrap-middle'>
+            <div className='emoji'>{getEmojiState(el.pm10Value)}</div>
+          {/* <div className='dustValue'>pm10Value : {el.pm10Value}</div> */}
+          <div className='dustState'>{getDustState(el.pm10Value)}</div>
+        </div>
+        <div className='dustValue'
+        style={{
+        color: "red"}}
+        >미세먼지 : {el.pm10Value}</div>
+        <div className='dataTime'>{el.dataTime} 기준</div>
+      </div>
+    ))}
+  </div>
   );
 }

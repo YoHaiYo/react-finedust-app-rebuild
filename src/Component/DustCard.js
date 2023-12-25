@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import { DataUrlManger } from '../Data/DataUrlManger';
+import { getCardColor, getDustState, getEmojiState } from '../Data/DustStatus';
 
 
 
@@ -25,16 +26,25 @@ export function DustCard({ selectedSido, numOfRows }) {
   }, [selectedSido, numOfRows]);
 
   return (
-        <>
+        <div className='cardOuter'>
           {dustData.map((el, idx) => (
-            <div key={idx}>
-              <div>sidoName : {el.sidoName}</div>
-              <div>stationName : {el.stationName}</div>
-              <div>dataTime : {el.dataTime}</div>
-              <div>pm10Value : {el.pm10Value}</div>
-              <div>pm10Grade : {el.pm10Grade}</div>
+            <div key={idx} className='cardContainer'
+            style={{
+              backgroundColor: getCardColor(el.pm10Value),
+            }}>
+              <div className='card-wrap-top'>
+                <div className='sidoName'>{el.sidoName}</div>
+                <div className='stationName'>{el.stationName}</div>
+              </div>
+              <div className='card-wrap-middle'>
+                  <div className='emoji'>{getEmojiState(el.pm10Value)}</div>
+                {/* <div className='dustValue'>pm10Value : {el.pm10Value}</div> */}
+                <div className='dustState'>{getDustState(el.pm10Value)}</div>
+              </div>
+              <div className='dustValue'>미세먼지 : {el.pm10Value}</div>
+              <div className='dataTime'>{el.dataTime} 기준</div>
             </div>
           ))}
-        </>
+        </div>
   );
 }
