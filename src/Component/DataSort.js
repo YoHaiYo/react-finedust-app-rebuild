@@ -1,7 +1,10 @@
+import card from '../Style/card.module.scss'
 import React from 'react'
 import { useState, useEffect } from 'react';
 import { DataUrlManger } from '../Data/DataUrlManger';
 import { getCardColor, getDustState, getEmojiState } from '../Data/DustStatus';
+import { Bookmark } from './Bookmark';
+
 
 /// GetApiData로 접근한 URL을 비동기 통신으로 객체 데이터로 가공 후 html 태그로 화면출력
 
@@ -37,30 +40,29 @@ export function DataSort({ sortNum, sortDirection }) {
     };
 
     fetchData();
-  }, [sortNum]);
+  }, [sortNum, sortDirection]);
 
   return (
-    <div className='cardOuter'>
+    <div className={card.cardOuter}>
     {dustData.map((el, idx) => (
-      <div key={idx} className='cardContainer'
+      <div key={idx} className={card.cardContainer}
       style={{
         backgroundColor: getCardColor(el.pm10Value),
       }}>
-        <div>{idx + 1}위</div>
-        <div className='card-wrap-top'>
-          <div className='sidoName'>{el.sidoName}</div>
-          <div className='stationName'>{el.stationName}</div>
+        <div className={card.rank}>{idx + 1}위</div>
+        <div className={card.cardWrapTop}>
+          <div className={card.sidoName}>{el.sidoName}</div>
+          <Bookmark sidoName={el.sidoName} stationName={el.stationName} pm10Value={el.pm10Value} dataTime={el.dataTime} />
+          <div className={card.stationName}>{el.stationName}</div>
         </div>
-        <div className='card-wrap-middle'>
-            <div className='emoji'>{getEmojiState(el.pm10Value)}</div>
+        <div className={card.cardWrapMiddle}>
+            <div className={card.emoji}>{getEmojiState(el.pm10Value)}</div>
           {/* <div className='dustValue'>pm10Value : {el.pm10Value}</div> */}
-          <div className='dustState'>{getDustState(el.pm10Value)}</div>
+          <div className={card.dustState}>{getDustState(el.pm10Value)}</div>
         </div>
-        <div className='dustValue'
-        style={{
-        color: "red"}}
+        <div className={card.dustValue} style={{color: "red"}}
         >미세먼지 : {el.pm10Value}</div>
-        <div className='dataTime'>{el.dataTime} 기준</div>
+        <div className={card.dataTime}>{el.dataTime} 기준</div>
       </div>
     ))}
   </div>
