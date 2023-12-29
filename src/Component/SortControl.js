@@ -1,8 +1,15 @@
 import React from 'react';
 
-const SortControl = ({ sortNum, sortDirection, onSortNumChange, onSortDirectionChange }) => {
+const SortControl = ({ sortNum, sortDirection, searchData, onSortNumChange, onSortDirectionChange, onSearchDataChange }) => {
   return (
     <div>
+      {/* <label htmlFor="searchData">검색 :</label>
+      <input
+        type="text"
+        id="searchData"
+        value={searchData}
+        onChange={onSearchDataChange}
+      /> */}
       <label htmlFor="sortNum">정렬 개수:</label>
       <input
         type="number"
