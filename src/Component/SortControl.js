@@ -23,8 +23,8 @@ const SortControl = ({ sortNum, sortDirection, searchData, onSortNumChange, onSo
         value={sortDirection}
         onChange={onSortDirectionChange}
       >
-        <option value="내림차순">미세먼지 안 좋은 곳부터 보기</option>
-        <option value="오름차순">미세먼지 좋은 곳부터 보기</option>
+        <option value="tobad">미세먼지 안 좋은 곳부터 보기</option>
+        <option value="togood">미세먼지 좋은 곳부터 보기</option>
       </select>
     </div>
   );

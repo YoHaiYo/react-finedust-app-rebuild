@@ -7,7 +7,7 @@ import SortControl from './Component/SortControl';
 
 export default function King() {
   const [sortNum, setSortNum] = useState(5);
-  const [sortDirection, setSortDirection] = useState("내림차순");
+  const [sortDirection, setSortDirection] = useState("tobad");
   const [searchData, setSearchData] = useState("정자");
 
   const handleSortNumChange = (e) => {
