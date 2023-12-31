@@ -20,7 +20,7 @@ export function DataUrlManger(selectedSido, numOfRows) {
     .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(queryParams[key])}`)
     .join('&');
   const fulldataurl = `${baseURL}?${queryString}`;
-  console.log(`Data URL : ${fulldataurl}`)
+  // console.log(`Data URL : ${fulldataurl}`)
 
   return (fulldataurl);
 }
