@@ -24,7 +24,7 @@ const BookmarkScreen = (props) => {
         <div key={idx} className={card.cardContainer} style={{ backgroundColor: getCardColor(el.pm10Value) }}>
           <div className={card.cardWrapTop}>
             <div className={card.sidoName}>{el.sidoName}</div>
-            <BookmarkToggle sidoName={el.sidoName} stationName={el.stationName} pm10Value={el.pm10Value} dataTime={el.dataTime} />
+            <BookmarkToggle stationName={el.stationName}/>
             <div className={card.stationName}>{el.stationName}</div>
           </div>
           <div className={card.cardWrapMiddle}>

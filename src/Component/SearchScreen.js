@@ -4,13 +4,23 @@ import { getCardColor, getDustState, getEmojiState } from '../Data/DustStatus';
 import BookmarkToggle from './BookmarkToggle';
 
 const SearchScreen = (props) => {
-
+  const [searchText, setSearchText] = useState("세종");
+  const searchArr = props.alldata.filter((el) => el.sidoName.includes(searchText) || (el.stationName.includes(searchText)));
+  // console.log(props.alldata.filter((el) => el.sidoName.includes("세종")).map((el,idx)=>(el)))
   return (
     <section>
-      <h3>검색스크린</h3>
+      <h3>검색스크린(검색범위:시도)</h3>
+      <span>통합검색 : </span>
+      <input
+        value={searchText}
+        type='text'             
+        onChange={(e)=>setSearchText(e.target.value)}
+      />    
+      <div>시도명 또는 지역명(구/동/로)으로 검색. 예) 서울, 종로구, 천계천로</div>
+      
 
       <div className={card.cardOuter}>
-      {props.alldata && props.alldata.map((el, idx) => (
+      {searchText && searchArr.map((el, idx) => ( // searchText && : 검색 텍스트가 없을 경우 전체 데이터 랜더링 방지
         <div
           key={el.sidoName + el.stationName}
           className={card.cardContainer}
@@ -18,7 +28,6 @@ const SearchScreen = (props) => {
             backgroundColor: getCardColor(el.pm10Value),
           }}
         >
-          <div className={card.rank}>{idx + 1}위</div>
           <div className={card.cardWrapTop}>
             <div className={card.sidoName}>{el.sidoName}</div>
             <BookmarkToggle stationName={el.stationName}/>
