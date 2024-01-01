@@ -1,8 +1,10 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
-import Rank from './Component/Rank'
-import BookmarksList from './Component/BookmarkList'
+import RankScreen from './Component/RankScreen'
+// import BookmarksList from './Component/BookmarkList'
+import BookmarkScreen from './Component/BookmarkScreen'
 import { AllDataGet } from './Data/AllDataGet';
+import SearchScreen from './Component/SearchScreen';
 
 
 function MainContents() {
@@ -15,9 +17,9 @@ function MainContents() {
       {/* <Route path='경로' element={보여줄 컴포넌트}> */}
       <Route path='/' element={<>첫페이지 컴포넌트</>}></Route>
       <Route path='/myplace' element={<>내지역설정 컴포넌트</>}></Route>
-      <Route path='/rank' element={<Rank alldata={alldata}/>}></Route>
-      <Route path='/bookmark' element={<BookmarksList/>}></Route>
-      <Route path='/search' element={<>지역 검색 컴포넌트</>}></Route>
+      <Route path='/rank' element={<RankScreen alldata={alldata}/>}></Route>
+      <Route path='/bookmark' element={<BookmarkScreen alldata={alldata}/>}></Route>
+      <Route path='/search' element={<SearchScreen alldata={alldata}/>}></Route>
       <Route path='/devinfo' element={<>개발정보 컴포넌트</>}></Route>
     </Routes>
   )

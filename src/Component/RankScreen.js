@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import card from '../Style/card.module.scss';
 import { getCardColor, getDustState, getEmojiState } from '../Data/DustStatus';
-import { Bookmark } from './BookmarkXXX';
 import BookmarkToggle from './BookmarkToggle';
 
-const Rank = (props) => {
+const RankScreen = (props) => {
   const [sortNum, setSortNum] = useState(10); // n개씩 보기
   const [sortDirection, setSortDirection] = useState('tobad'); // 오름차 내림차
 
@@ -77,7 +76,7 @@ const Rank = (props) => {
   );
 };
 
-export default Rank;
+export default RankScreen;
 
 
 
