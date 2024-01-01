@@ -4,7 +4,7 @@ import { getCardColor, getDustState, getEmojiState } from '../Data/DustStatus';
 import BookmarkToggle from './BookmarkToggle';
 
 const SearchScreen = (props) => {
-  const [searchText, setSearchText] = useState("세종");
+  const [searchText, setSearchText] = useState("");
   const searchArr = props.alldata.filter((el) => el.sidoName.includes(searchText) || (el.stationName.includes(searchText)));
   // console.log(props.alldata.filter((el) => el.sidoName.includes("세종")).map((el,idx)=>(el)))
   return (
