@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import card from '../Style/card.module.scss';
 import { getCardColor, getDustState, getEmojiState } from '../Data/DustStatus';
 import BookmarkToggle from './BookmarkToggle';
+import DustCriteria from './DustCriteria';
 
 const RankScreen = (props) => {
   const [sortNum, setSortNum] = useState(10); // n개씩 보기
@@ -45,6 +46,7 @@ const RankScreen = (props) => {
         <option value="tobad">미세먼지 안 좋은 곳부터 보기</option>
         <option value="togood">미세먼지 좋은 곳부터 보기</option>
       </select>
+      <DustCriteria/>
 
       <div className={card.cardOuter}>
       {sortedData && sortedData.map((el, idx) => (

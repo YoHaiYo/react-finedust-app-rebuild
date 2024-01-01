@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import BookmarkToggle from './BookmarkToggle';
 import { getCardColor, getDustState, getEmojiState } from '../Data/DustStatus';
 import card from '../Style/card.module.scss';
+import DustCriteria from './DustCriteria';
 
 const BookmarkScreen = (props) => {
   const [bookmarkedItems, setBookmarkedItems] = useState([]);
@@ -19,23 +20,27 @@ const BookmarkScreen = (props) => {
   }, [props.alldata]);
 
   return (
-    <div className={card.cardOuter}>
-      {toBookmarkedData.map((el, idx) => (
-        <div key={idx} className={card.cardContainer} style={{ backgroundColor: getCardColor(el.pm10Value) }}>
-          <div className={card.cardWrapTop}>
-            <div className={card.sidoName}>{el.sidoName}</div>
-            <BookmarkToggle stationName={el.stationName}/>
-            <div className={card.stationName}>{el.stationName}</div>
+    <section>
+      <h3>즐겨찾기 관리</h3>
+      <DustCriteria/>
+      <div className={card.cardOuter}>
+        {toBookmarkedData.map((el, idx) => (
+          <div key={idx} className={card.cardContainer} style={{ backgroundColor: getCardColor(el.pm10Value) }}>
+            <div className={card.cardWrapTop}>
+              <div className={card.sidoName}>{el.sidoName}</div>
+              <BookmarkToggle stationName={el.stationName}/>
+              <div className={card.stationName}>{el.stationName}</div>
+            </div>
+            <div className={card.cardWrapMiddle}>
+              <div className={card.emoji}>{getEmojiState(el.pm10Value)}</div>
+              <div className={card.dustState}>{getDustState(el.pm10Value)}</div>
+            </div>
+            <div className={card.dustValue}>미세먼지: {el.pm10Value}</div>
+            <div className={card.dataTime}>{el.dataTime} 기준</div>
           </div>
-          <div className={card.cardWrapMiddle}>
-            <div className={card.emoji}>{getEmojiState(el.pm10Value)}</div>
-            <div className={card.dustState}>{getDustState(el.pm10Value)}</div>
-          </div>
-          <div className={card.dustValue}>미세먼지: {el.pm10Value}</div>
-          <div className={card.dataTime}>{el.dataTime} 기준</div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </section>
   );
 };
 

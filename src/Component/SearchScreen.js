@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import card from '../Style/card.module.scss';
 import { getCardColor, getDustState, getEmojiState } from '../Data/DustStatus';
 import BookmarkToggle from './BookmarkToggle';
+import DustCriteria from './DustCriteria';
 
 const SearchScreen = (props) => {
   const [searchText, setSearchText] = useState("");
@@ -17,6 +18,7 @@ const SearchScreen = (props) => {
         onChange={(e)=>setSearchText(e.target.value)}
       />    
       <div>시도명 또는 지역명(구/동/로)으로 검색. 예) 서울, 종로구, 천계천로</div>
+      <DustCriteria/>
       
 
       <div className={card.cardOuter}>
