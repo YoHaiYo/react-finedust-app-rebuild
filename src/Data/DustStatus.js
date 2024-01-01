@@ -1,5 +1,4 @@
 // DustStatus.js
-import { useState,useEffect } from "react";
 
 // 미세먼지 수치에 따른 카드 색상 반환
 export const getCardColor = (pm10Value) => {

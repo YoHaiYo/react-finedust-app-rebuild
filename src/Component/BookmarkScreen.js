@@ -24,7 +24,7 @@ const BookmarkScreen = (props) => {
       <h3>즐겨찾기 관리</h3>
       <DustCriteria/>
       <div className={card.cardOuter}>
-        {toBookmarkedData.map((el, idx) => (
+        {toBookmarkedData && toBookmarkedData.map((el, idx) => (
           <div key={idx} className={card.cardContainer} style={{ backgroundColor: getCardColor(el.pm10Value) }}>
             <div className={card.cardWrapTop}>
               <div className={card.sidoName}>{el.sidoName}</div>

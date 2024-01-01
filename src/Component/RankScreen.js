@@ -3,6 +3,8 @@ import card from '../Style/card.module.scss';
 import { getCardColor, getDustState, getEmojiState } from '../Data/DustStatus';
 import BookmarkToggle from './BookmarkToggle';
 import DustCriteria from './DustCriteria';
+import { Button, Form, InputGroup, Dropdown, ToggleButton, ButtonGroup, Badge } from 'react-bootstrap';
+
 
 const RankScreen = (props) => {
   const [sortNum, setSortNum] = useState(10); // n개씩 보기
@@ -14,6 +16,7 @@ const RankScreen = (props) => {
 
   const handleSortDirectionChange = e => {
     setSortDirection(e.target.value);
+    setRadioValue(e.currentTarget.value)
   };
 
   let sortedData;
@@ -32,20 +35,55 @@ const RankScreen = (props) => {
     console.log('sortDirection 입력오류');
   }
 
+  const [radioValue, setRadioValue] = useState('tobad');
+
+  const radios = [
+    { name: '미세먼지 안 좋은 곳부터 보기', value: 'tobad' },
+    { name: '미세먼지 좋은 곳부터 보기', value: 'togood' },
+  ];
+
   return (
     <section>
-      <h3>검색 및 순위보기</h3>
-      <button onClick={()=>{setSortNum(5)}}>TOP5</button>
-      <button onClick={()=>{setSortNum(10)}}>TOP10</button>
+      <h3>미세먼지 순위보기</h3>
 
-      <label>정렬 개수:</label>
-      <input type="number" value={sortNum} onChange={handleSortNumChange} />
+      <div>
+        <ButtonGroup>
+          {radios.map((radio, idx) => (
+            <ToggleButton
+              key={idx}
+              id={`radio-${idx}`}
+              type="radio"
+              variant={idx % 2 ? 'outline-success' : 'outline-danger'}
+              name="radio"
+              value={radio.value}
+              checked={radioValue === radio.value}            
+              onChange={handleSortDirectionChange}
+            >
+              {radio.name}
+            </ToggleButton>
+          ))}
+        </ButtonGroup>
 
-      <label>정렬 방향:</label>
-      <select value={sortDirection} onChange={handleSortDirectionChange}>
-        <option value="tobad">미세먼지 안 좋은 곳부터 보기</option>
-        <option value="togood">미세먼지 좋은 곳부터 보기</option>
-      </select>
+        <div>
+          <ButtonGroup className="my-3">
+            <Button variant="outline-primary" onClick={() => setSortNum(5)}>TOP5</Button>
+            <Button variant="outline-primary" onClick={() => setSortNum(10)}>TOP10</Button>
+            <Button variant="outline-primary" onClick={() => setSortNum(25)}>TOP25</Button>
+            <Button variant="outline-primary" onClick={() => setSortNum(50)}>TOP50</Button>
+          </ButtonGroup>    
+        </div>
+        
+        <div className="mb-3">
+          <Badge bg="primary" className={card.rs}>순위 검색</Badge>
+          <input type="number" value={sortNum} onChange={handleSortNumChange}/>
+        </div>   
+
+        <div>           
+        </div>
+
+        
+      </div>
+
       <DustCriteria/>
 
       <div className={card.cardOuter}>
