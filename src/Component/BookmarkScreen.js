@@ -20,7 +20,7 @@ const BookmarkScreen = (props) => {
   }, [props.alldata]);
 
   return (
-    <section>
+    <section className='mt-2'>
       <h3>즐겨찾기 관리</h3>
       <DustCriteria/>
       <div className={card.cardOuter}>

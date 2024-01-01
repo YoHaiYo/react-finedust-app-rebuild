@@ -7,7 +7,7 @@ import { Button, Form, InputGroup, Dropdown, ToggleButton, ButtonGroup, Badge } 
 
 
 const RankScreen = (props) => {
-  const [sortNum, setSortNum] = useState(10); // n개씩 보기
+  const [sortNum, setSortNum] = useState(5); // n개씩 보기
   const [sortDirection, setSortDirection] = useState('tobad'); // 오름차 내림차
 
   const handleSortNumChange = e => {
@@ -43,7 +43,7 @@ const RankScreen = (props) => {
   ];
 
   return (
-    <section>
+    <section className='mt-2'>
       <h3>미세먼지 순위보기</h3>
 
       <div>
@@ -75,7 +75,7 @@ const RankScreen = (props) => {
         
         <div className="mb-3">
           <Badge bg="primary" className={card.rs}>순위 검색</Badge>
-          <input type="number" value={sortNum} onChange={handleSortNumChange}/>
+          <input className={card.rsinput} type="number" value={sortNum} onChange={handleSortNumChange}/>
         </div>   
 
         <div>           

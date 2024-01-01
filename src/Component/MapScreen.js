@@ -1,13 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../Style/Map.css'
 import DustCriteria from './DustCriteria';
-
-
-/// ★맵 전체 사이즈 조절은 mapSize로. css안먹힘.
-const mapSize = {
-  maxWidth: "50%",
-  height: "auto",
-}
+import map from '../Style/map.module.scss';
 
 export default function MapScreen(props) {
   const mapdata = props.alldata;
@@ -80,12 +74,12 @@ function showDataTime(mapdata) {
 }
 
   return (
-    <section>
+    <section className={`mt-2 ${map.mapsection}`}>
       <h3>전국 미세먼지 지도</h3>
+      <div className='my-2'>({showDataTime(mapdata)})</div> 
       <DustCriteria />      
-      <div>{showDataTime(mapdata)}</div> 
 
-      <svg viewBox="0 0 800 1107" xmlns="http://www.w3.org/2000/svg" id='mapsize' style={mapSize}>
+      <svg viewBox="-100 -20 800 1107" xmlns="http://www.w3.org/2000/svg" id='mapsize' className={map.mapsize}>
       <defs>
       <filter id="dropshadow">
           <feGaussianBlur in="SourceAlpha" stdDeviation="3" />

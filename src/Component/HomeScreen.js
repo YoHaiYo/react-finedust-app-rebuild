@@ -21,7 +21,7 @@ export default function HomeScreen(props) {
   }, [props.alldata]);
 
   return (
-    <section>
+    <section className='mt-2'>
       <h3>내 즐겨찾기</h3>
       <Link to="/bookmark" className={homecard.link}>
       <div className={homecard.cardOuter}>
