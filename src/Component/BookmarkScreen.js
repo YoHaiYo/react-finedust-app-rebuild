@@ -23,7 +23,7 @@ const BookmarkScreen = (props) => {
     <section className='mt-2'>
       <h3>즐겨찾기 관리</h3>
       <DustCriteria/>
-      <div className={card.cardOuter}>
+      {toBookmarkedData && toBookmarkedData.length > 0 ? (<div className={card.cardOuter}>
         {toBookmarkedData && toBookmarkedData.map((el, idx) => (
           <div key={idx} className={card.cardContainer} style={{ backgroundColor: getCardColor(el.pm10Value) }}>
             <div className={card.cardWrapTop}>
@@ -39,7 +39,9 @@ const BookmarkScreen = (props) => {
             <div className={card.dataTime}>{el.dataTime} 기준</div>
           </div>
         ))}
-      </div>
+      </div>) : (
+        <div>현재 추가된 즐겨찾기가 없습니다.</div>
+      )}
     </section>
   );
 };

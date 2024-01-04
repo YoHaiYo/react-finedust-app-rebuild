@@ -76,8 +76,9 @@ function showDataTime(mapdata) {
   return (
     <section className={`mt-2 ${map.mapsection}`}>
       <h3>전국 미세먼지 지도</h3>
-      <div className='my-2'>({showDataTime(mapdata)})</div> 
-      <DustCriteria />      
+      
+      <DustCriteria />
+      <div className={map.nowtime}>({showDataTime(mapdata)})</div>       
 
       <svg viewBox="-100 -20 800 1107" xmlns="http://www.w3.org/2000/svg" id='mapsize' className={map.mapsize}>
       <defs>

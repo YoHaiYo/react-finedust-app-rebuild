@@ -24,7 +24,7 @@ export default function HomeScreen(props) {
     <section className='mt-2'>
       <h3>내 즐겨찾기</h3>
       <Link to="/bookmark" className={homecard.link}>
-      <div className={homecard.cardOuter}>
+      {toBookmarkedData && toBookmarkedData.length > 0 ? (<div className={homecard.cardOuter}>
         {toBookmarkedData && toBookmarkedData.map((el, idx) => (
           <div key={idx} className={homecard.cardContainer} style={{ backgroundColor: getCardColor(el.pm10Value) }}>
             <div className={homecard.cardWrapTop}>
@@ -38,7 +38,9 @@ export default function HomeScreen(props) {
             </div>
           </div>
         ))}
-      </div>
+      </div>) : (
+        <div>현재 추가된 즐겨찾기가 없습니다.</div>
+      )}
       </Link>
       <MapScreen alldata={props.alldata}/>
     </section>
