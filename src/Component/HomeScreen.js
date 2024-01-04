@@ -3,7 +3,7 @@ import BookmarkScreen from './BookmarkScreen'
 import MapScreen from './MapScreen'
 import homecard from '../Style/homecard.module.scss';
 import { Link } from 'react-router-dom';
-import { getCardColor, getDustState, getEmojiState } from '../Data/DustStatus';
+import { getCardColor, getDustState, getEmojiState } from './DustStatus';
 
 export default function HomeScreen(props) {
   const [bookmarkedItems, setBookmarkedItems] = useState([]);

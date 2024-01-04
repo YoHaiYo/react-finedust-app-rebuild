@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, ListGroup, Button } from 'react-bootstrap';
+import { Card, ListGroup } from 'react-bootstrap';
 
 function DevInfoScreen() {
   return (

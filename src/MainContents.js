@@ -2,7 +2,6 @@ import React from 'react'
 import { useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import RankScreen from './Component/RankScreen'
-// import BookmarksList from './Component/BookmarkList'
 import BookmarkScreen from './Component/BookmarkScreen'
 import { AllDataGet } from './Data/AllDataGet';
 import SearchScreen from './Component/SearchScreen';

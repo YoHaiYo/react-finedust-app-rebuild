@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import BookmarkToggle from './BookmarkToggle';
-import { getCardColor, getDustState, getEmojiState } from '../Data/DustStatus';
+import { getCardColor, getDustState, getEmojiState } from './DustStatus';
 import card from '../Style/card.module.scss';
 import DustCriteria from './DustCriteria';
 
