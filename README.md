@@ -5,10 +5,11 @@
 https://finedustwatcher.netlify.app/
 
 # 컴포넌트 구조도
-<img width="2797" alt="컴포넌트 구조도_FineDustWatcher" src="https://github.com/YoHaiYo/react-finedust-app-rebuild/assets/124754510/aab9fa06-d5d8-4143-8881-bf31f47c7df0">
+![Component Structure Diagram_1](https://github.com/YoHaiYo/react-finedust-app-rebuild/assets/124754510/e65ed07d-57e6-4f08-9e6e-0967a8a128f4)
+![Component Structure Diagram_2](https://github.com/YoHaiYo/react-finedust-app-rebuild/assets/124754510/25098113-8c21-4c77-beae-db615aef26d8)
 
-**PDF로 보기**
-https://drive.google.com/file/d/1hqso9EvnV0rQaKg0eoQO5EJb200OMUbn/view?usp=drive_link
+**피그마로 보기**
+https://www.figma.com/file/rF9sTVbtEz1jCzYoI0nN0y/FineDust-Watcher?type=design&node-id=0-1&mode=design
 
 # 프로젝트 특징
 1. 공공데이터 포털의 미세먼지 RESTful API를 사용.
