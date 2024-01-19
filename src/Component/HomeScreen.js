@@ -38,7 +38,7 @@ export default function HomeScreen(props) {
   return (
     <>
       <DimGuide />
-      <section className='mt-2 d-lg-flex container mx-auto'>
+      <section className='mt-2 d-lg-flex container mx-auto '>
         <div className='px-5 d-flex flex-column align-items-center'>
           <h3 className='mt-2'>내 즐겨찾기</h3>
           <Link to="/bookmark" className={homecard.link}>
@@ -101,6 +101,7 @@ export default function HomeScreen(props) {
               </div>
             </div>
             <Button variant="outline-primary" className='w-100 mt-2'>순위 더 보러가기</Button>
+            <img className='guide' src="./img/guide-1.png" alt="guide-img"></img>
           </Link>
         </div>
         <MapScreen alldata={props.alldata} />
