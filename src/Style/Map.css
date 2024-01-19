@@ -1,25 +1,26 @@
-
 .OUTLINE {
-  stroke-linejoin:round;
+  stroke-linejoin: round;
   stroke: #ffffff;
   stroke-width: 2;
-  }
+}
 
-  #CD50 {   /* 제주 */
+#CD50 {
+  /* 제주 */
   transform: translateY(-100px);
-  }
+}
 
-  .TEXT {    
+.TEXT {
   fill: #ffffff;
   font-size: 2rem;
   font-weight: bold;
   text-anchor: middle;
-  alignment-baseline: middle;  
-  }
-  .TEXT.DustValue {
-    transform: translate(0px, -15px);
-  }
+  alignment-baseline: middle;
+}
 
-  .mapsize {
-    background-color: orange;
-  }
+.TEXT.DustValue {
+  transform: translate(0px, -15px);
+}
+
+.mapsize {
+  /* background-color: orange; */
+}

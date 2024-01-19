@@ -1,20 +1,21 @@
-.mapsection {
- 
-}
+.mapsection {}
+
 .mapsize {
-  width: 40vw; // 기본값
+  width: 30vw; // 기본값
 
   @media (max-width: 992px) {
     width: 90%; // 1200px 미만에서는 90%로 설정
   }
 
   height: auto; // 높이는 그대로 유지
-  
+
 }
+
 .nowtime {
   // position: absolute;
   // top: 20.5%;
   // left: 58%;
   font-size: 1rem;
   font-weight: bold;
+  // background-color: skyblue;
 }

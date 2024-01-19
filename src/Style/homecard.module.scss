@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+
   .cardContainer {
     min-width: 180px;
     height: 100px;
@@ -9,42 +10,50 @@
     border-radius: 10px;
     padding: 10px 15px;
     box-shadow: 5px 5px 10px .5px rgb(190, 210, 255);
+
     .cardWrapTop {
       display: flex;
       justify-content: space-around;
       align-items: center;
+
       .sidoName {
-        color: white;
+        color: #000;
         font-size: 20px;
         font-weight: 550;
       }
+
       .stationName {
-        color: white;
+        color: #000;
       }
     }
-    .cardWrapMiddle{
+
+    .cardWrapMiddle {
       /* border: #3f3f3f solid 1px; */
       display: flex;
       align-items: center;
       justify-content: space-evenly;
+
       .emoji {
         font-size: 35px;
         font-weight: 100;
       }
+
       .dustState {
-        color: white;
+        color: #000;
         font-size: 18px;
         font-weight: 550;
       }
+
       .dustValue {
-        color: whitesmoke;
+        color: #000;
         font-size: 16px;
         font-weight: bold;
       }
+    }
   }
 }
-}
+
 // Link to 때문에 생긴 a 태그 밑줄 제거
-.link {  
+.link {
   text-decoration: none;
 }

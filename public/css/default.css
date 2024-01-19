@@ -1,25 +1,55 @@
 @import url("./font.css");
+
 body {
   overflow-x: hidden;
 }
 
-body, a {
+body,
+a {
   color: #333;
   text-decoration: none;
   font-family: 'Pretendard-Regular', sans-serif;
 }
 
-.fa-solid.fa-star::before{
-  font-size: 24px;  
+.fa-solid.fa-star::before {
+  font-size: 24px;
   color: #ffea00;
 }
 
 footer {
   background-color: #777;
 }
+
 footer p {
   margin: 0;
 }
+
 section {
   min-height: 85vh;
+}
+
+/* DIM */
+/* body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+} */
+/* YourComponent.css */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
