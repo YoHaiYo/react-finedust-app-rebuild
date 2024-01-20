@@ -27,9 +27,3 @@ footer p {
 section {
   min-height: 85vh;
 }
-
-/* 가이드 */
-.guide {
-  position: relative;
-  z-index: 2;
-}
