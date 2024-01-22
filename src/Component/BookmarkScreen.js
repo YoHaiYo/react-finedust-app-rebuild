@@ -12,6 +12,7 @@ const BookmarkScreen = (props) => {
     // 로컬 스토리지에서 즐겨찾기 아이템을 불러옵니다.
     const storedBookmarks = JSON.parse(localStorage.getItem('bookmarkedItems')) || [];
     setBookmarkedItems(storedBookmarks);
+    console.log('test', bookmarkedItems)
 
     // bookmarkedItems에 저장된 stationName을 바탕으로 전체 데이터에서 재검색하여 즐겨찾기 데이터 설정
     const toBookmarkedData = props.alldata.filter(data => storedBookmarks.some(item => item.stationName === data.stationName));
@@ -22,13 +23,13 @@ const BookmarkScreen = (props) => {
   return (
     <section className='mt-2'>
       <h3>즐겨찾기 관리</h3>
-      <DustCriteria/>
+      <DustCriteria />
       {toBookmarkedData && toBookmarkedData.length > 0 ? (<div className={card.cardOuter}>
         {toBookmarkedData && toBookmarkedData.map((el, idx) => (
           <div key={idx} className={card.cardContainer} style={{ backgroundColor: getCardColor(el.pm10Value) }}>
             <div className={card.cardWrapTop}>
               <div className={card.sidoName}>{el.sidoName}</div>
-              <BookmarkToggle stationName={el.stationName}/>
+              <BookmarkToggle stationName={el.stationName} />
               <div className={card.stationName}>{el.stationName}</div>
             </div>
             <div className={card.cardWrapMiddle}>

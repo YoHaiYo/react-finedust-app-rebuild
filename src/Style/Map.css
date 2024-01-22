@@ -10,8 +10,8 @@
 }
 
 .TEXT {
-  fill: #ffffff;
-  font-size: 2rem;
+  fill: #fff;
+  font-size: 1.5rem;
   font-weight: bold;
   text-anchor: middle;
   alignment-baseline: middle;
@@ -19,6 +19,7 @@
 
 .TEXT.DustValue {
   transform: translate(0px, -15px);
+  font-size: 1.5rem;
 }
 
 .mapsize {

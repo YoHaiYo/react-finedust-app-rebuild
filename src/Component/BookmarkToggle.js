@@ -33,7 +33,7 @@ export default function BookmarkToggle({ stationName }) {
     localStorage.setItem('bookmarkedItems', JSON.stringify(BookmarkArr));
     setIsClicked(!isClicked); // 상태를 토글
 
-    // console.log(BookmarkArr)
+    console.log(BookmarkArr)
   };
 
   return (

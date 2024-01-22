@@ -55,12 +55,29 @@ export const DimModal = () => {
     setIsModalOpen(false);
     // expires :1 -> 1 day expiration
     // expires: 1 / 1440 -> 1 minute expiration
-    Cookies.set('close', 'Y', { expires: 1 / 1440 });
+    Cookies.set('close', 'Y', { expires: 1 });
   };
 
-  
+
   const dimdelete = () => {
     document.body.classList.remove("dim")
+    /*     document.querySelectorAll(".dim-guide").forEach(function (element) {
+          // element.style.opacity = 0;
+          element.style.visibility = 'hidden';
+        }); */
+
+    // dim-guide 태그를 지우는 순간 자식태그들을 새로 만들어줌! css로는 안되기때문.
+    const dimCard = document.querySelector('.dim-guide'); // `.dim-guide` 클래스를 가진 DimCard 선택
+    const parent = dimCard.parentNode; // DimCard의 부모 요소 선택
+    const children = Array.from(dimCard.childNodes); // DimCard의 모든 자식 노드를 배열로 변환
+
+    // 자식 노드를 부모 노드에 하나씩 삽입
+    children.forEach(child => {
+      parent.insertBefore(child, dimCard);
+    });
+
+    // DimCard 요소 제거
+    parent.removeChild(dimCard);
   };
 
   return (
@@ -68,8 +85,8 @@ export const DimModal = () => {
       {isModalOpen && (
         <DimBG>
           <DimBtns>
-            <DimBtn onClick={()=>{closeNoraml(); dimdelete();}} >닫기</DimBtn>
-            <DimBtn onClick={()=>{closeOneday(); dimdelete();}} >하루동안안보기</DimBtn>
+            <DimBtn onClick={() => { closeNoraml(); dimdelete(); }} >닫기</DimBtn>
+            <DimBtn onClick={() => { closeOneday(); dimdelete(); }} >하루동안안보기</DimBtn>
           </DimBtns>
           <div className='startguide'></div>
         </DimBG>
@@ -83,30 +100,46 @@ export const DimCard = styled.div`
 position: relative;
 border: 2px dashed #fff;
 border-radius: 1rem;
-padding: 1rem;
 pointer-events: none; // Dim 상태서 클릭방지.
 `;
+// export const DimCard = (props) => {
+//   return (
+//     <DimCardSt className='dim'>
+//       {props.children}
+//     </DimCardSt>
+//   )
+// }
 
 const DimMessageStyle = styled.div`
   position: absolute;
-  top: 105%;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
+  top: 50%;
+  transform: translateY(-50%);
+  right: calc(100% + 102px);
+  min-width: 350px;
   border: 2px solid #fff;
   border-radius: 1rem;
   padding: 0.75rem;
   color: #fff;
   z-index: 2;
 `;
+const DimArrow = styled.div`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 100%;
+  z-index: 2;  
+`;
 
 export const DimMessage = (props) => {
 
-  return(
-      <>        
-        <DimMessageStyle>
-          {props.children}
-        </DimMessageStyle>
-      </>
+  return (
+    <>
+      <DimMessageStyle>
+        {props.children}
+        <DimArrow>
+          <img className='arrow' src='./img/arrow-1.png' alt="arrow" style={{ width: 100 }}></img>
+        </DimArrow>
+      </DimMessageStyle>
+    </>
   )
 }

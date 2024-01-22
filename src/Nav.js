@@ -24,11 +24,11 @@ function Navigation() {
 
   return (
     <Navbar bg="primary" expand="lg" variant="dark">
-      <Container>        
-        <Navbar.Brand as={Link} to="/"><img src={logoSrc} alt='logo' style={{height: "27px"}}/></Navbar.Brand>
+      <Container>
+        <Navbar.Brand as={Link} to="/"><img src={logoSrc} alt='logo' style={{ height: "27px" }} /></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav" className='justify-content-center'>
-        <Nav className="mr-auto">
+        <Navbar.Collapse id="basic-navbar-nav" className='justify-content-end'>
+          <Nav className="mr-auto">
             <Nav.Link as={Link} to="/"><i className="fa-solid fa-house mx-1"></i>홈</Nav.Link>
             <Nav.Link as={Link} to="/map"><i className="fa-solid fa-map-location-dot mx-1"></i>미세먼지 지도</Nav.Link>
             <Nav.Link as={Link} to="/rank"><i className="fa-solid fa-ranking-star mx-1"></i>미세먼지 순위</Nav.Link>

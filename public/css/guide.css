@@ -1,28 +1,31 @@
-
 .dim {
   overflow: hidden;
 }
+
+.dim-guide {}
+
 .startguide {
-  position: relative;  
+  position: relative;
   width: 100vw;
   height: 100vh;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("/img/guide-pc.png");
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat; 
+  /* background-image: url("/img/guide-pc.png"); */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 @media (max-width: 950px) {
   .startguide {
-  background-image: url("/img/guide-mobile.png");
+    /* background-image: url("/img/guide-mobile.png"); */
   }
 }
+
 @media (max-width: 470px) {
   .startguide {
-  background-image: url("/img/guide-mobile2.png");
+    /* background-image: url("/img/guide-mobile2.png"); */
   }
 }

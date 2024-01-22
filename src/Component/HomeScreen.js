@@ -5,7 +5,23 @@ import MapScreen from './MapScreen'
 import homecard from '../Style/homecard.module.scss';
 import { Link } from 'react-router-dom';
 import { getCardColor, getDustState, getEmojiState } from './DustStatus';
-import { DimModal, DimCard, DimMessage}  from './DimGuide';
+import { DimModal, DimCard, DimMessage } from './DimGuide';
+import { HomeCard } from './HomeCard';
+
+const tempArr = [
+  {
+    sidoName: "즐찾1",
+    stationName: "추가필요",
+    pm10Value: '13',
+  },
+  {
+    sidoName: "즐찾2",
+    stationName: "추가필요",
+    pm10Value: '33',
+  },
+]
+
+
 
 export default function HomeScreen(props) {
   const [bookmarkedItems, setBookmarkedItems] = useState([]);
@@ -38,68 +54,27 @@ export default function HomeScreen(props) {
   return (
     <>
       <DimModal />
-    {/* <img src="./img/fullguide.png" alt="guide-img"></img> */}
-      <section className='mt-2 d-lg-flex container mx-auto '>
+      {/* <img src="./img/fullguide.png" alt="guide-img"></img> */}
+      <section className='mt-2 d-lg-flex container mx-auto justify-content-center'>
         <div className='px-5 d-flex flex-column align-items-center'>
+          <DimCard className='dim-guide'>
             <h3 className='mt-2'>내 즐겨찾기</h3>
             <Link to="/bookmark" className={homecard.link}>
-              {toBookmarkedData && toBookmarkedData.length > 0 ? (<div className={homecard.cardOuter}>
-                {toBookmarkedData && toBookmarkedData.map((el, idx) => (
-                  <div key={idx} className={homecard.cardContainer} style={{ backgroundColor: getCardColor(el.pm10Value) }}>
-                    <div className={homecard.cardWrapTop}>
-                      <div className={homecard.sidoName}>{el.sidoName}</div>
-                      <div className={homecard.stationName}>{el.stationName}</div>
-                    </div>
-                    <div className={homecard.cardWrapMiddle}>
-                      <div className={homecard.emoji}>{getEmojiState(el.pm10Value)}</div>
-                      <div className={homecard.dustState}>{getDustState(el.pm10Value)}</div>
-                      <div className={homecard.dustValue}>({el.pm10Value})</div>
-                    </div>
-                  </div>
-                ))}
-              </div>) : (
-                <>
-                  <div>현재 추가된 즐겨찾기가 없습니다.</div>
-                </>
+              {toBookmarkedData && toBookmarkedData.length > 0 ? (HomeCard(toBookmarkedData)) : (
+                HomeCard(tempArr)
               )}
             </Link>
-              
-          <h3 className='mt-3'>미세먼지 WORST/BEST 지역</h3>
+            <DimMessage>즐겨찾기를 추가하고 관리 할 수 있습니다.</DimMessage>
+          </DimCard>
+
+          <h3 className='mt-5'>미세먼지 WORST/BEST 지역</h3>
           <Link to="/rank" className={`${homecard.link} d-inline-block mb-3`}>
             <div className='d-flex justify-content-center flex-wrap'>
-              {/* WORST 지역 */}
+              {/* WORST 지역 worstplace*/}
+              {HomeCard(worstplace)}
+              {/* BEST 지역 bestplace*/}
               <div className={homecard.cardOuter}>
-                {worstplace && worstplace.map((el, idx) => (
-                  <div key={idx} className={homecard.cardContainer} style={{ backgroundColor: getCardColor(el.pm10Value) }}>
-                    {/* <div className={homecard.cardWrapTop}>{idx + 1}위</div> */}
-                    <div className={homecard.cardWrapTop}>
-                      <div className={homecard.sidoName}>{el.sidoName}</div>
-                      <div className={homecard.stationName}>{el.stationName}</div>
-                    </div>
-                    <div className={homecard.cardWrapMiddle}>
-                      <div className={homecard.emoji}>{getEmojiState(el.pm10Value)}</div>
-                      <div className={homecard.dustState}>{getDustState(el.pm10Value)}</div>
-                      <div className={homecard.dustValue}>({el.pm10Value})</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              {/* BEST 지역 */}
-              <div className={homecard.cardOuter}>
-                {bestplace && bestplace.map((el, idx) => (
-                  <div key={idx} className={homecard.cardContainer} style={{ backgroundColor: getCardColor(el.pm10Value) }}>
-                    {/* <div className={homecard.cardWrapTop}>{idx + 1}위</div> */}
-                    <div className={homecard.cardWrapTop}>
-                      <div className={homecard.sidoName}>{el.sidoName}</div>
-                      <div className={homecard.stationName}>{el.stationName}</div>
-                    </div>
-                    <div className={homecard.cardWrapMiddle}>
-                      <div className={homecard.emoji}>{getEmojiState(el.pm10Value)}</div>
-                      <div className={homecard.dustState}>{getDustState(el.pm10Value)}</div>
-                      <div className={homecard.dustValue}>({el.pm10Value})</div>
-                    </div>
-                  </div>
-                ))}
+                {HomeCard(bestplace)}
               </div>
             </div>
             <Button variant="outline-primary" className='w-100 mt-2'>순위 더 보러가기</Button>
