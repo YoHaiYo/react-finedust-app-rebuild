@@ -2,7 +2,6 @@
   overflow: hidden;
 }
 
-.dim-guide {}
 
 .startguide {
   position: relative;
@@ -16,6 +15,39 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.dim-right {
+  left: calc(100% + 102px);
+}
+
+.dim-right .dim-arrow {
+  right: 100%;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.dim-left {
+  right: calc(100% + 102px);
+}
+
+.dim-left .dim-arrow {
+  left: 100%;
+  transform: translateY(-50%) rotate(0deg);
+}
+
+.dim-intro {
+  z-index: 5;
+  position: absolute;
+  left: 15%;
+  bottom: 10%;
+  border: 2px dashed red;
+  border-radius: 1rem;
+  width: 400px;
+  height: 300px;
+}
+
+.dim-intro-out {
+  display: none;
 }
 
 @media (max-width: 950px) {

@@ -12,7 +12,7 @@ const BookmarkScreen = (props) => {
     // 로컬 스토리지에서 즐겨찾기 아이템을 불러옵니다.
     const storedBookmarks = JSON.parse(localStorage.getItem('bookmarkedItems')) || [];
     setBookmarkedItems(storedBookmarks);
-    console.log('test', bookmarkedItems)
+    // console.log('test', bookmarkedItems)
 
     // bookmarkedItems에 저장된 stationName을 바탕으로 전체 데이터에서 재검색하여 즐겨찾기 데이터 설정
     const toBookmarkedData = props.alldata.filter(data => storedBookmarks.some(item => item.stationName === data.stationName));
