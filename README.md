@@ -12,7 +12,7 @@ https://finedustwatcher.netlify.app/
 ![Component Structure Diagram_2](https://github.com/YoHaiYo/react-finedust-app-rebuild/assets/124754510/25098113-8c21-4c77-beae-db615aef26d8)
 
 **피그마로 보기**
-https://www.figma.com/file/rF9sTVbtEz1jCzYoI0nN0y/FineDust-Watcher?type=design&node-id=0-1&mode=design
+(컴포넌트 구조도 피그마로 보기)[https://www.figma.com/file/rF9sTVbtEz1jCzYoI0nN0y/FineDust-Watcher?type=design&node-id=0-1&mode=design]
 
 # 기획 초점
 “ 기존 미세먼지정보 사이트보다 사용자들에게 어필할 수 있는 점이 하나라도 있는지에 초점을 맞춰 기획하였습니다. “
