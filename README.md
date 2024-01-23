@@ -14,6 +14,13 @@ https://finedustwatcher.netlify.app/
 **피그마로 보기**
 https://www.figma.com/file/rF9sTVbtEz1jCzYoI0nN0y/FineDust-Watcher?type=design&node-id=0-1&mode=design
 
+# 기획 초점
+“ 기존 미세먼지정보 사이트보다 사용자들에게 어필할 수 있는 점이 하나라도 있는지에 초점을 맞춰 기획하였습니다. “
+- 즐겨찾기 기능으로 자신의 지역 미세먼지 정보를 빠르게 확인 할 수 있게하였습니다.
+- 현재 한반도의 미세먼지 랭킹을 보여줘서 사용자의 흥미를 유도하였습니다.
+- 미세먼지 정도에 맞게 색상으로 보여주는 전국 미세먼지 지도를 제공하여 사용자가 한 눈에 전국 미세먼지 상황을 파악 할 수 있게 하였습니다.
+→ 이 모든 기능을 홈 화면에 제시하여 사용자가 가장 필요한 정보를 접근하기 편리하게 구성하였습니다.
+
 # 프로젝트 특징
 1. 공공데이터 포털의 미세먼지 RESTful API를 사용.
 
@@ -62,15 +69,12 @@ https://www.figma.com/file/rF9sTVbtEz1jCzYoI0nN0y/FineDust-Watcher?type=design&n
 저는 이 경험을 통해 문제 원인이 개발 외적인 요소일 수도 있다는것을 깨닫게 되었고, 문제해결을 위한 시야가 넓어졌습니다.
 
 # 주요 package
-"axios": "^1.6.3",
-
-"bootstrap": "^5.3.2",
-
-"react-bootstrap": "^2.9.2",
-
-"react-router-dom": "^6.21.1",
-
-"sass": "^1.69.5",
+- axios 1.6.3
+- bootstrap 5.3.2
+- react-bootstrap 2.9.2
+- react-router-dom 6.21.1
+- sass 1.69.5
+- styled-components : 5.3.10
 
 # 이전 미세먼지앱 레포지토리
 현재 미세먼지 앱을 만들기 이전 초창기 버전 코드입니다.
