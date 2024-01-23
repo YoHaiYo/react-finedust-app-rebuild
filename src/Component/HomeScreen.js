@@ -84,11 +84,11 @@ export default function HomeScreen(props) {
             즐겨찾기를 추가하고 관리 할 수 있습니다.
           </DimMessage> */}
 
-          <h3 className='mt-5'>미세먼지 WORST/BEST 지역</h3>
+          <h3 className='mt-5 text-nowrap'>미세먼지 WORST/BEST 지역</h3>
           {/* <DimCard> */}
 
           <Link to="/rank" className={`${homecard.link} d-inline-block mb-3`}>
-            <div className='d-flex justify-content-center flex-wrap'>
+            <div className='d-flex justify-content-center'>
               {worstplace && worstplace.length > 0 ? (HomeCard(worstplace)) : (
                 HomeCard(loadingWorstArr)
               )}
