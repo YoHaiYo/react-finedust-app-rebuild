@@ -12,8 +12,7 @@ const DimBG = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.75);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -105,14 +104,16 @@ position: relative;
 border: 2px dashed #fff;
 border-radius: 1rem;
 pointer-events: none; // Dim 상태서 클릭방지.
+/* filter: brightness(0.7); */
 `;
+
 
 export const DimCard = (props) => {
 
   return (
     <>
       <DimCardStyle className='dim-guide'>
-        {props.children}
+        <div className='dim-on'>{props.children}</div>
       </DimCardStyle>
     </>
   )
@@ -120,13 +121,13 @@ export const DimCard = (props) => {
 
 
 const DimMessageStyle = styled.div`
-  position: absolute;
-  top: 50%;
+  position: relative;
+  top: -10%;
   transform: translateY(-50%);
   /* right : calc(100% + 102px); */
   /* left : calc(100% + 102px); */
   min-width: 270px;
-  border: 2px solid #fff;
+  border: 2.5px solid #fff;
   border-radius: 1rem;
   padding: 0.75rem;
   color: #fff;
@@ -141,7 +142,7 @@ const DimArrow = styled.div`
   width: 100px;
   /* transform: translateY(-50%); */
   /* transform: translateY(-50%) rotate(180deg); */
-  z-index: 2;
+  z-index: 2;  
 `;
 
 export const DimMessage = (props) => {
@@ -149,10 +150,12 @@ export const DimMessage = (props) => {
   return (
     <>
       <DimMessageStyle className={`${props.className}`}>
+
         {props.children}
         <DimArrow className="dim-arrow">
           <img className='arrow' src='./img/arrow-1.png' alt="arrow" style={{ width: 100 }}></img>
         </DimArrow>
+
       </DimMessageStyle>
     </>
   )

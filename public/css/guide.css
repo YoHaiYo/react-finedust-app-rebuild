@@ -1,5 +1,5 @@
 .dim {
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 
@@ -48,6 +48,15 @@
 
 .dim-intro-out {
   display: none;
+}
+
+/* 딤 테두리 내부 어둡게 */
+.dim-on {
+  filter: brightness(0.4);
+}
+
+.dim-off {
+  filter: brightness(1);
 }
 
 @media (max-width: 950px) {

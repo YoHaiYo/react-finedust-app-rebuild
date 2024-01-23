@@ -68,54 +68,51 @@ export default function HomeScreen(props) {
 
   return (
     <>
-      <DimModal />
+      {/* <DimModal /> */}
       {/* <img src="./img/fullguide.png" alt="guide-img"></img> */}
       <section className='mt-2 d-lg-flex container mx-auto justify-content-center'>
         <div className='px-5 d-flex flex-column align-items-center'>
-          <DimCard>
-            <h3 className='mt-2'>내 즐겨찾기</h3>
-            <Link to="/bookmark" className={homecard.link}>
-              {toBookmarkedData && toBookmarkedData.length > 0 ? (HomeCard(toBookmarkedData)) : (
-                HomeCard(loadingBookMarkArr)
-              )}
-            </Link>
-            <DimMessage className="dim-left">
-              즐겨찾기를 추가하고 관리 할 수 있습니다.
-            </DimMessage>
-          </DimCard>
+          {/* <DimCard> */}
+          <h3 className='mt-2'>내 즐겨찾기</h3>
+          <Link to="/bookmark" className={homecard.link}>
+            {toBookmarkedData && toBookmarkedData.length > 0 ? (HomeCard(toBookmarkedData)) : (
+              HomeCard(loadingBookMarkArr)
+            )}
+          </Link>
+          {/* </DimCard> */}
+          {/* <DimMessage className="dim-left">
+            즐겨찾기를 추가하고 관리 할 수 있습니다.
+          </DimMessage> */}
 
           <h3 className='mt-5'>미세먼지 WORST/BEST 지역</h3>
-          <DimCard>
+          {/* <DimCard> */}
 
-            <Link to="/rank" className={`${homecard.link} d-inline-block mb-3`}>
-              <div className='d-flex justify-content-center flex-wrap'>
-                {worstplace && worstplace.length > 0 ? (HomeCard(worstplace)) : (
-                  HomeCard(loadingWorstArr)
-                )}
-                {bestplace && bestplace.length > 0 ? (HomeCard(bestplace)) : (
-                  HomeCard(loadingBestArr)
-                )}
-              </div>
-              <Button variant="outline-primary" className='w-100 mt-2'>순위 더 보러가기</Button>
-            </Link>
-
-            <DimMessage className="dim-left">
-              현재 한반도에서 가장 미세먼지가 <br />
-              안좋은지역과 좋은 지역을 보여줍니다.
-            </DimMessage>
-          </DimCard>
+          <Link to="/rank" className={`${homecard.link} d-inline-block mb-3`}>
+            <div className='d-flex justify-content-center flex-wrap'>
+              {worstplace && worstplace.length > 0 ? (HomeCard(worstplace)) : (
+                HomeCard(loadingWorstArr)
+              )}
+              {bestplace && bestplace.length > 0 ? (HomeCard(bestplace)) : (
+                HomeCard(loadingBestArr)
+              )}
+            </div>
+            <Button variant="outline-primary" className='w-100 mt-2'>순위 더 보러가기</Button>
+          </Link>
+          {/* </DimCard> */}
+          {/* <DimMessage className="dim-left">
+            현재 한반도에서 가장 미세먼지가 <br />
+            안좋은지역과 좋은 지역을 보여줍니다.
+          </DimMessage> */}
         </div>
-        <DimCard>
-          <DimMessage className="dim-right">
-            각 도시의 미세먼지 평균값을 <br />
-            미세먼지기준 색상과 함께 보여줍니다.
-          </DimMessage>
-          <MapScreen alldata={props.alldata} />
-        </DimCard>
+        {/* <DimCard> */}
+        <MapScreen alldata={props.alldata} />
+        {/* </DimCard> */}
+        {/* <DimMessage className="dim-right">
+          각 도시의 미세먼지 평균값을 <br />
+          미세먼지기준 색상과 함께 보여줍니다.
+        </DimMessage> */}
 
-        <div className='dim-intro'>
-          개발자 : 심세훈
-        </div>
+
       </section>
     </>
   )
