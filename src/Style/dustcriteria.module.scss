@@ -1,11 +1,13 @@
 .wrap {
   display: flex;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
   justify-content: center;
+  margin: 0 auto;
 
   .criteria {
+    font-size: 0.9rem;
     margin: 0 0.5rem;
-    padding: .15rem .35rem;
+    padding: .10rem .30rem;
     border-radius: 15px;
     font-weight: bold;
     color: #333;
@@ -27,4 +29,17 @@
   .verybad {
     background-color: #e67474;
   }
+
+}
+
+@media (max-width: 483px) {
+  .wrap {
+    flex-wrap: wrap;
+    min-width: 300px;
+
+    .criteria {
+      margin: 0 0.1rem;
+    }
+  }
+
 }
