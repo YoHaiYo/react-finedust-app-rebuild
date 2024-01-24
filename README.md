@@ -1,5 +1,5 @@
 # Preview 
-![image](https://github.com/YoHaiYo/react-finedust-app-rebuild/assets/124754510/f69a50da-b968-4362-912a-a673df19d5fd)
+![finedust_pv](https://github.com/YoHaiYo/react-finedust-app-rebuild/assets/124754510/a281ceb9-edec-4435-b3e4-362cfcb22ab3)
 
 # 소개 
 공공 데이터 포털에서 미세먼지 Restful API를 받아서 미세먼지 정보를 지도와 랭킹형태로 알려주는 웹앱입니다. 
